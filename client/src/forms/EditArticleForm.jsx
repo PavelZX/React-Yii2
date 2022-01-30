@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react'
 
 const EditArticleForm = props => {
-  const [ article, setArticle ] = useState(props.currentArticle);
+  const [ article, setArticle ] = useState(props.currentArticle)
 
   useEffect(
     () => {
       setArticle(props.currentArticle)
     },
     [ props.currentArticle ]
-  );
+  )
 
   const handleInputChange = event => {
     const { name, value } = event.target;
 
     setArticle({ ...article, [name]: value })
-  };
+  }
 
   return (
     <form
       onSubmit={event => {
-        event.preventDefault();
+        event.preventDefault()
 
         props.updateArticle(article.id, article)
       }}

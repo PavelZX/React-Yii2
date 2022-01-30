@@ -8,7 +8,7 @@ const AddArticleForm = props => {
 		const { name, value } = event.target;
 
 		setArticle({ ...article, [name]: value })
-	};
+	}
 
 	return (
 		<form
@@ -29,7 +29,7 @@ const AddArticleForm = props => {
 			<button>Добавить публикацию</button>
 		</form>
 	)
-};
+}
 
 
 export default AddArticleForm
