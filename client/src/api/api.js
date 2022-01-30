@@ -1,4 +1,4 @@
-const OBJECT_QUERY = '/'
+const OBJECT_QUERY = '/articles'
 
 export default class ApiService {
 
@@ -14,7 +14,7 @@ export default class ApiService {
     }
 
     getArticles = async () => {
-        const res =  this.fetchResource(`${this._apiBase}${OBJECT_QUERY}articles`,{
+        const res =  this.fetchResource(`${this._apiBase}${OBJECT_QUERY}`,{
             method: 'GET',
             mode: 'cors',
             headers: {
@@ -27,7 +27,7 @@ export default class ApiService {
     }
 
     deleteArticle = async (id) => {
-        const res =  this.fetchResource(`${this._apiBase}${OBJECT_QUERY}delete/${id}`,{
+        const res =  this.fetchResource(`${this._apiBase}${OBJECT_QUERY}/${id}`,{
             method: 'DELETE',
             mode: 'cors',
             headers: {
@@ -40,7 +40,7 @@ export default class ApiService {
     }
 
     updateArticle = async (id, data) => {
-        const res =  this.fetchResource(`${this._apiBase}${OBJECT_QUERY}update/${id}`,{
+        const res =  this.fetchResource(`${this._apiBase}${OBJECT_QUERY}/${id}`,{
             method: 'PUT',
             mode: 'cors',
             headers: {
@@ -54,7 +54,7 @@ export default class ApiService {
     }
 
     createArticle = async (data) => {
-        const res =  this.fetchResource(`${this._apiBase}${OBJECT_QUERY}create/`,{
+        const res =  this.fetchResource(`${this._apiBase}${OBJECT_QUERY}`,{
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -67,19 +67,12 @@ export default class ApiService {
         return res
     }
 
-    _transFromArticles = (article) => {
-        return {
-            id: article.id,
-            body: article.body,
-            title: article.title,
-        }
-    }
-
     _transToArticles = (article) => {
         return {
             id: article.id,
-            body: article.body,
             title: article.title,
+            created_at: article.created_at,
+            body: article.body,
         }
     }
 

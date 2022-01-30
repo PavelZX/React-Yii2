@@ -53,20 +53,7 @@ $config = [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'article',
-                    'patterns' => [
-                        'PUT,PATCH {id}' => 'update',
-                        'DELETE {id}' => 'delete',
-                        'GET,HEAD {id}' => 'view',
-                        'POST' => 'create',
-                        'GET,HEAD' => 'index',
-                        '{id}' => 'options',
-                        '' => 'options',
-                        'OPTIONS <id:\d+>/<action:[\w-]+>' => 'options',
-                        'OPTIONS <action:[\w-]+>' => 'options',
-                        '<id:\d+>/<action:[\w-]+>' => '<action>',
-                        '<action:[\w-]+>' => '<action>'
-                    ],
+                    'controller' => 'article'
                 ],
             ],
         ],

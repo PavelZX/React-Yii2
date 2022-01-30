@@ -25,7 +25,7 @@ const EditArticleForm = props => {
         props.updateArticle(article.id, article)
       }}
     >
-      <label>Заголов</label>
+      <label>Заголовок</label>
       <input type="text" name="title" value={article.title} onChange={handleInputChange} />
       <label>Текст</label>
       <input type="text" name="body" value={article.body} onChange={handleInputChange} />

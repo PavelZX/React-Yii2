@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const AddArticleForm = props => {
-	const initialFormState = { id: null, body: '', title: '' }
+	const initialFormState = { id: null, title: '', created_at: '', body: '' }
 	const [ article, setArticle ] = useState(initialFormState)
 
 	const handleInputChange = event => {

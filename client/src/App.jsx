@@ -18,10 +18,10 @@ const App = () => {
     useEffect(() => {
 		api.getArticles()
 			.then(data => {
-				return data.map(api._transFromArticles).slice(0, showLimit)
+				return data.map(api._transToArticles).slice(0, showLimit)
 			})
 			.then(data => setArticle(data))
-    }, [])
+    })
 
 		const addArticle = article => {
 		article.id = articles.length + 1
