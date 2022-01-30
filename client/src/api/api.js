@@ -14,7 +14,7 @@ export default class ApiService {
     }
 
     getArticles = async () => {
-        const res =  this.fetchResource(`${this._apiBase}${OBJECT_QUERY}`,{
+        const res =  this.fetchResource(`${this._apiBase}${OBJECT_QUERY}articles`,{
             method: 'GET',
             mode: 'cors',
             headers: {
