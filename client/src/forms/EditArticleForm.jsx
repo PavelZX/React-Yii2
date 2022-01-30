@@ -7,9 +7,8 @@ const EditArticleForm = props => {
     () => {
       setArticle(props.currentArticle)
     },
-    [ props ]
+    [ props.currentArticle ]
   );
-  // You can tell React to skip applying an effect if certain values haven’t changed between re-renders. [ props ]
 
   const handleInputChange = event => {
     const { name, value } = event.target;
