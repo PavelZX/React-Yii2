@@ -8,7 +8,7 @@ const App = () => {
 
 	const api = new ApiService()
 	const articleData = []
-	const initialFormState = { id: null, body: '', title: '' }
+	const initialFormState = { id: null, title: '', created_at: '', body: '' }
 	const showLimit = 30
 
 	const [ articles, setArticle ] = useState(articleData)
