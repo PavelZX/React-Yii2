@@ -28,7 +28,7 @@ const App = () => {
 
 		const res = api.createArticle(article)
 		res.then(data => {
-			if (data.status) {
+			if (data) {
 				setArticle([ ...articles, article ])
 			} else {
 				alert(`Error ${data}`)
@@ -42,7 +42,7 @@ const App = () => {
 
 		const res = api.deleteArticle(id)
 		res.then(data => {
-			if (data.status) {
+			if (data) {
 				setArticle(articles.filter(article => article.id !== id))
 			} else {
 				alert(`Error ${data}`)
@@ -55,7 +55,7 @@ const App = () => {
 
 		const res = api.updateArticle(id, updatedArticle)
 		res.then(data => {
-			if (data.status) {
+			if (data) {
 				setArticle(articles.map(article => (article.id === id ? updatedArticle : article)));
 			} else {
 				alert(`Error ${data}`)
